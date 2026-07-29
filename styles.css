@@ -1,35 +1,29 @@
+/* تنسيق الصفحة بالكامل */
 body {
-    background-color: #000;
+    background-color: #000; /* خلفية سوداء */
+    margin: 0;
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    overflow: hidden;
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: center; /* توسيط أفقي */
+    align-items: center;     /* توسيط رأسي */
+    color: #fff;             /* لون الخط أبيض */
+    font-family: 'Bricolage Grotesque', sans-serif;
+    overflow: hidden; /* لمنع ظهور scrollbar أثناء الأنيميشن */
 }
 
-/* حركة البلور (الموشن) */
-.blur-blob {
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, #333 0%, #000 70%);
-    filter: blur(80px);
-    animation: move 8s infinite alternate ease-in-out;
-    z-index: 0;
-}
-
-@keyframes move {
-    from { transform: translate(-100px, -100px); }
-    to { transform: translate(100px, 100px); }
-}
-
+/* تنسيق النص */
 h1 {
-    font-size: 4rem;
-    letter-spacing: 10px;
-    text-transform: uppercase;
-    z-index: 1;
-    text-shadow: 0 0 20px rgba(255,255,255,0.2);
+    font-size: 24pt;         /* المقاس اللي طلبته */
+    font-weight: 400;        /* وزن الخط (عصري) */
+    text-transform: uppercase; /* حروف كبيرة */
+    letter-spacing: 0.2em;   /* تباعد يعطي فخامة */
+    margin: 0;
+    /* تحسين أداء المتصفح للأنيميشن */
+    will-change: opacity, transform, filter;
+}
+
+/* تنسيق الحروف الفردية (مهم للـ SplitType) */
+.animate-text .char {
+    display: inline-block; /* عشان الأنيميشن يشتغل على كل حرف لوحده */
+    /* الأنيميشن بيطبق هنا من الجافا سكريبت */
 }
