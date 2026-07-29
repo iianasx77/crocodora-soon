@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000; /* خلفية سوداء */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.blur-background {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    filter: blur(100px); /* ده تأثير البلور */
+    border-radius: 50%;
+}
+
+.content h1 {
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 5rem;
+    letter-spacing: 15px; /* مسافة بين الحروف تعطي فخامة */
+    text-transform: uppercase;
+    z-index: 1;
+}
