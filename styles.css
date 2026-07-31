@@ -1,29 +1,24 @@
-/* تنسيق الصفحة بالكامل */
 body {
-    background-color: #000; /* خلفية سوداء */
     margin: 0;
     height: 100vh;
     display: flex;
-    justify-content: center; /* توسيط أفقي */
-    align-items: center;     /* توسيط رأسي */
-    color: #fff;             /* لون الخط أبيض */
-    font-family: 'Bricolage Grotesque', sans-serif;
-    overflow: hidden; /* لمنع ظهور scrollbar أثناء الأنيميشن */
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+    font-family: "Bricolage Grotesque", sans-serif;
 }
 
-/* تنسيق النص */
 h1 {
-    font-size: 24pt;         /* المقاس اللي طلبته */
-    font-weight: 400;        /* وزن الخط (عصري) */
-    text-transform: uppercase; /* حروف كبيرة */
-    letter-spacing: 0.2em;   /* تباعد يعطي فخامة */
     margin: 0;
-    /* تحسين أداء المتصفح للأنيميشن */
+    font-size: 24pt;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
     will-change: opacity, transform, filter;
 }
 
-/* تنسيق الحروف الفردية (مهم للـ SplitType) */
 .animate-text .char {
-    display: inline-block; /* عشان الأنيميشن يشتغل على كل حرف لوحده */
-    /* الأنيميشن بيطبق هنا من الجافا سكريبت */
+    display: inline-block;
 }
