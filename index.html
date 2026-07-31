@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crocodora</title>
-    <!-- استدعاء الفونت من جوجل -->
+
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
-    <!-- ربط ملف الـ CSS -->
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,27 +18,23 @@
         <h1 class="animate-text">Coming Soon</h1>
     </div>
 
-    <!-- 1. مكتبة GSAP للأنيميشن -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <!-- 2. مكتبة SplitType لتقسيم النص لحروف -->
     <script src="https://unpkg.com/split-type"></script>
-    
-    <!-- كود الجافا سكريبت لتشغيل التأثير -->
-    <script>
-        // نقسم النص داخل الـ h1 لحروف (chars)
-        const myText = new SplitType('.animate-text', { types: 'chars' });
 
-        // نستخدم GSAP لعمل الأنيميشن
-        gsap.from('.animate-text .char', {
-            opacity: 0,           // يبدأ شفاف
-            y: 20,                // يتحرك من تحت لفوق بسيط
-            filter: "blur(10px)", // يبدأ ببلور عالي
-            duration: 0.8,        // مدة ظهور الحرف الواحد
-            stagger: 0.15,        // التأخير بين كل حرف والتاني
-            ease: "power2.out",   // حركة ناعمة
+    <script>
+        const myText = new SplitType(".animate-text", {
+            types: "chars"
+        });
+
+        gsap.from(".animate-text .char", {
+            opacity: 0,
+            y: 20,
+            filter: "blur(10px)",
+            duration: 0.8,
+            stagger: 0.15,
+            ease: "power2.out",
             onComplete: () => {
-                // لما يخلص الأنيميشن، نشيل الفلتر عشان الحرف يبقى شارب وواضح 100%
-                document.querySelector('.animate-text').style.filter = "none";
+                document.querySelector(".animate-text").style.filter = "none";
             }
         });
     </script>
